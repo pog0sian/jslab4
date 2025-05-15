@@ -26,9 +26,12 @@ function f3(x, callback) {
 
 function F(x) {
     f1(x, (result1) => {
+        console.log(`промежуточный итог ${result1}`);
         f2(x, (result2) => {
+            console.log(`промежуточный итог ${result1 + result2}`);
             f3(x, (result3) => {
                 const sum = result1 + result2 + result3;
+                console.log(`промежуточный итог ${sum}`);
                 console.log(`Результат выполнения функции F: ${sum}`);
             });
         });
@@ -36,5 +39,5 @@ function F(x) {
 }
 
 F(2);
-F(4);
-F(6);
+// F(4);
+// F(6);
